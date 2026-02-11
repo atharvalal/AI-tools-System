@@ -1,5 +1,6 @@
 import model.PersonelPlan;
 import model.Plan;
+import model.ProPlan;
 
 import java.time.LocalDate;
 
@@ -10,8 +11,15 @@ public class Main {
 
         Plan freePlan = new PersonelPlan(1L, "Free Plan", "Personel", 0, LocalDate.now(), 100, 10, 4, 0);
         freePlan.calcExtraPromptCost(4);
+        Plan proPlan = new ProPlan(2L,"Pro Plan","Pro",450,LocalDate.now(),4500,10,6);
+        //Type casting is done here to access child specific methods
+        ((ProPlan) proPlan).addTeamMembers();
+        ((ProPlan) proPlan).addTeamMembers();
 
         System.out.println(freePlan.displayPlanDetails());
+        System.out.println("\n");
+        System.out.println(proPlan.displayPlanDetails());
+
 
 
     }

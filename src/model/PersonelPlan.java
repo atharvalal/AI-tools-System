@@ -15,7 +15,7 @@ public class PersonelPlan extends Plan {
     }
 
     public double getExtraUsageCost() {
-        return extraUsageCost;
+        return this.extraUsageCost;
     }
 
     @Override
