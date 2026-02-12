@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
-public class ProPlan extends Plan {
+public class ProPlan extends Plan implements TeamManageable {
     private int maxTeamMembers;
     private int currentTeamMembers;
 

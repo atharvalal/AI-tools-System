@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
-public abstract class Plan {
+public abstract class Plan implements PlanService {
 
     private Long planId;
     protected String planName;

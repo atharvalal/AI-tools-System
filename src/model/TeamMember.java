@@ -3,13 +3,14 @@ package model;
 import java.time.LocalDate;
 import java.util.Locale;
 
-public class TeamMember {
+public class TeamMember implements Validatable, Activatable {
     private int memberId;
     private String memberName;
     private String email;
     private String role;
     private LocalDate joinDate;
     private int promptsUsed;
+    private boolean active;
 
     public TeamMember(int memberId, String memberName, String email, String role, LocalDate joinDate, int promptsUsed) {
         if (!validateMemberId(memberId)) {
@@ -37,6 +38,7 @@ public class TeamMember {
         this.role = role;
         this.joinDate = joinDate;
         this.promptsUsed = promptsUsed;
+        this.active = true;
 
     }
 
@@ -63,6 +65,10 @@ public class TeamMember {
     public int getPromptsUsed() {
         return promptsUsed;
     }
+    
+    public boolean isActive() {
+        return active;
+    }
     public String memberData(){
         return "memberID: "+memberId+"\n";
     }
@@ -75,7 +81,8 @@ public class TeamMember {
                 "Email: " + email + "\n" +
                 "Role: " + role + "\n" +
                 "Join Date: " + joinDate + "\n" +
-                "Prompts Used: " + promptsUsed;
+                "Prompts Used: " + promptsUsed + "\n" +
+                "Active: " + active;
     }
     
     // Validation methods
@@ -102,6 +109,10 @@ public class TeamMember {
     
     public boolean validatePromptsUsed(int promptsUsed) {
         return promptsUsed >= 0;
+    }
+
+    public void deactivateMember(){
+        this.active = false;
     }
 }
 

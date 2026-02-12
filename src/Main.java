@@ -28,7 +28,9 @@ public class Main {
         System.out.println("Total teams Usage : "+ totalTeamUsage);
         System.out.println(" ");
         TeamMember m1 = new TeamMember(1,"Atharva","Atharvakop7@gmail.com","Admin",LocalDate.now(),2000);
-        System.out.println(m1.toString());
+        TeamMember m2 = new TeamMember(2,"rajan","Rajan@gmail.com","Member",LocalDate.now(),1000);
+        System.out.println(m1.toString()+"\n");
+        System.out.println(m2.toString()+"\n");
         System.out.println(m1.validateMemberId(m1.getMemberId()));
         System.out.println(m1.validateEmail(m1.getEmail()));
 
