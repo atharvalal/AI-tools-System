@@ -29,6 +29,8 @@ public class Main {
         System.out.println(" ");
         TeamMember m1 = new TeamMember(1,"Atharva","Atharvakop7@gmail.com","Admin",LocalDate.now(),2000);
         System.out.println(m1.toString());
+        System.out.println(m1.validateMemberId(m1.getMemberId()));
+        System.out.println(m1.validateEmail(m1.getEmail()));
 
 
 
