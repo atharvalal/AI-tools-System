@@ -19,6 +19,23 @@ public class ProPlan extends Plan {
         }
         return  false;
     }
+    public boolean removeTeamMembers(){
+        if(this.currentTeamMembers>0){
+            this.currentTeamMembers--;
+            return  true;
+        }
+        return  false;
+    }
+    public int getAvailableSlots(){
+        int availableSlots = (this.maxTeamMembers-this.currentTeamMembers);
+        return  availableSlots;
+    }
+    public int getTotalTeamUsage(int totalTeamUsage){
+        return (totalTeamUsage);
+
+    }
+
+
 
 
     @Override

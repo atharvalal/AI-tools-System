@@ -1,7 +1,9 @@
 import model.PersonelPlan;
 import model.Plan;
 import model.ProPlan;
+import model.TeamMember;
 
+import java.lang.reflect.Member;
 import java.time.LocalDate;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -15,10 +17,18 @@ public class Main {
         //Type casting is done here to access child specific methods
         ((ProPlan) proPlan).addTeamMembers();
         ((ProPlan) proPlan).addTeamMembers();
+        ((ProPlan) proPlan).removeTeamMembers();
+        int availableSlots = ((ProPlan) proPlan).getAvailableSlots();
 
         System.out.println(freePlan.displayPlanDetails());
         System.out.println("\n");
         System.out.println(proPlan.displayPlanDetails());
+        System.out.println("Available Slots : "+availableSlots);
+        int totalTeamUsage = ((ProPlan) proPlan).getTotalTeamUsage(4500);
+        System.out.println("Total teams Usage : "+ totalTeamUsage);
+        System.out.println(" ");
+        TeamMember m1 = new TeamMember(1,"Atharva","Atharvakop7@gmail.com","Admin",LocalDate.now(),2000);
+        System.out.println(m1.toString());
 
 
 
